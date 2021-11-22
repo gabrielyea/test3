@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Pokemons</h1>
+<%= link_to 'Add pokemon', search_poke_path(user_id: @user) %>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Picture</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pokemons.each do |pokemon| %>
+      <tr>
+        <td><%= pokemon.name %></td>
+        <td><%= image_tag(pokemon.picture) %></td>
+        <td><%= pokemon.user_id %></td>
+        <%# <td><%= link_to 'Show', pokemon %></td> %>
+        <td><%= link_to 'Edit', edit_user_pokemon_path(@user, pokemon) %></td>
+        <%# <td><%= link_to 'Destroy', pokemon, method: :delete, data: { confirm: 'Are you sure?' } %></td> %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%# <%= link_to 'New Pokemon', new_pokemon_path %> %>

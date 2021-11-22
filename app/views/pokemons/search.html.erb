@@ -1,0 +1,15 @@
+<h2> Search for pokemon </h2>
+<%= form_with url: '/fetch_poke', method: :get do |form| %>
+  <div>
+    <%= form.label :poke %>
+    <%= form.text_field :poke %>
+  </div>
+
+ <div class="actions">
+    <%= form.hidden_field :user_id, value: @user.id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
